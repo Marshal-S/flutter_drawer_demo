@@ -61,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                 //当前组件的context父组件是 MyApp 是没有 Scaffold，且没有drawer,因此无法打开
                 //Builder是一个StatelessWidget基础组件，只不过返回了自己的context，因此没问题
                 Scaffold.of(context).openDrawer();
+                //Scaffold.of(context).closeDrawer(); //关闭侧边栏
                 // Scaffold.of(context).openEndDrawer();//打开右侧侧边栏
               },
               icon: const Icon(Icons.table_rows_rounded),
@@ -79,9 +80,9 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(0),
           children: const <Widget>[
             UserAccountsDrawerHeader(
-              accountEmail: Text("副标题"),
               accountName: Text("标题"),
-              //背景
+              accountEmail: Text("副标题"),
+              //头像
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.white,
               ),
